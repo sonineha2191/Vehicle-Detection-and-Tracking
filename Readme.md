@@ -48,7 +48,7 @@ Here is an example using the `YCrCb` and `RGB` color space and HOG parameters of
 
 ![display](features.png)
 
-
+All the extracted features were also Normalized using Scikit Learn `MinMaxScaler`. 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
 I tried various combinations of parameters and colour spaces, as shown above I observed that HOG features contain more information in the three channels for YCrCb color space. So I decided to choose YCrCb color space. I experimented with different orientations and pixels_per_cell, increasing the orientation while increased accuracy but at same time due to a big feature vector also caused more training and prediction time. I had to choose an optimum, after certain experimentation, I settled for:
@@ -105,12 +105,12 @@ The results now while good in detecting, still had certain **False Positives** t
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
 The pipeline (defined in cell 24) was appilied to test video here's a [link to my video result](./test_video_output_YCrCb.mp4)
 
-I also attempted to keep a record of previous detected boxes using class `Vehicle_detection`. The result of the complete pipeline (Cell 28 function `process_video`) is [Link](./test_video_output_YCrCb2.mp4)
+I also attempted to keep a record of previous detected boxes using class `Vehicle_detection`. The result of the complete pipeline (Cell 28 function `process_video`) is [Link](./test_video_output_YCrCb2.mp4).  And here is the complete video [Link](./project_video)
 
 You can also visualize the videos in the follwing Youtube links:
-* [Test Video Primitive Pipeline]()
-* [Test Video Pipeline with previous frame memory]()
-* [Project Video pipeline with previous frame memory]()
+* [Test Video Primitive Pipeline](https://www.youtube.com/watch?v=snl0Uoep89c)
+* [Test Video Pipeline with previous frame memory](https://www.youtube.com/watch?v=K8Tsb9EsoVk)
+* [Project Video pipeline with previous frame memory](https://www.youtube.com/watch?v=YjW2lNII3ME)
 
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
